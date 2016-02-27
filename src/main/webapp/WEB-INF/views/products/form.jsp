@@ -11,7 +11,10 @@
 <title>Cadastro de livros</title>
 </head>
 <body>
-	<springForm:form action="${spring:mvcUrl('saveProduct').build()}" method="post" commandName="product">
+	<springForm:form action="${spring:mvcUrl(\"saveProduct\").build()}" 
+			method="post" 
+			commandName="product"
+			enctype="multipart/form-data">
 		<div>
 			<label for="title">Título</label> 
 			<springForm:input path="title" id="title" />
@@ -42,7 +45,11 @@
 				</div>
 			</c:forEach>
 		</div>
-
+		<div>
+			<label for="summary">Sumário do livro</label>
+			<input type="file" name="summary" id="summary">
+			<springForm:errors path="summaryPath"/>
+		</div>
 		<div>
 			<input type="submit" value="Enviar" />
 		</div>

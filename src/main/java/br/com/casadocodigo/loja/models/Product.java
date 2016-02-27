@@ -1,5 +1,6 @@
 package br.com.casadocodigo.loja.models;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -13,8 +14,6 @@ import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
-
-import br.com.casadocodigo.loja.models.Price;
 
 @Entity
 public class Product {
@@ -38,7 +37,13 @@ public class Product {
 
 	@DateTimeFormat
 	private Calendar releaseDate;
-	
+
+	private String summaryPath;
+
+	public Integer getId() {
+		return id;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -79,6 +84,14 @@ public class Product {
 		this.releaseDate = releaseDate;
 	}
 
+	public String getSummaryPath() {
+		return summaryPath;
+	}
+
+	public void setSummaryPath(String summaryPath) {
+		this.summaryPath = summaryPath;
+	}
+
 	@Override
 	public String toString() {
 		return "Product { " //
@@ -86,6 +99,12 @@ public class Product {
 				+ "description=" + description + "," //
 				+ "numberOfPages=" + numberOfPages + "," //
 				+ "}";
+	}
+
+	public BigDecimal priceFor(BookType bookType) {
+		return prices.stream() //
+				.filter(price -> price.getBookType().equals(bookType)) //
+				.findFirst().get().getValue();
 	}
 
 }

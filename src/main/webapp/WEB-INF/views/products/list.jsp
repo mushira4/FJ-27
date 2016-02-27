@@ -8,8 +8,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:forEach items="${products}" var="product">
-		<c:out value="${product}" /><br />
-	</c:forEach>
+	<table>
+		<tr>
+			<td>Titulo</td>
+			<td>Detalhes</td>
+		</tr>
+		
+		<c:forEach items="${products}" var="product">
+			<tr>
+				<td><c:out value="${product.title}"/></td>
+				<td>
+					<c:url value="/products/${product.id}" var="linkDetalhar"/>
+					<a href="${linkDetalhar}">Detalhar</a>
+				</td>
+			</tr>
+		</c:forEach>
+	</table>
 </body>
 </html>

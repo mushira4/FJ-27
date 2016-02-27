@@ -24,4 +24,11 @@ public class ProductDAO {
 				.getResultList();
 	}
 
+	public Product find(Integer id) {
+		return entityManager.createQuery("from Product p join fetch p.prices where p.id = :id", Product.class) //
+				.setParameter("id", id) //
+				.getSingleResult();
+
+	}
+
 }
