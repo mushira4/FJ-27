@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8" />
-	<title>Casa do CÃ³digo</title>
-</head>
-<body>
-	<h1>Casa Do CÃ³digo</h1>
-</body>
-</html>
+<%@taglib tagdir="/WEB-INF/tags" prefix="cdc"%>
+<cdc:page title="Casa do Código"><h1>Casa Do Código</h1></cdc:page>
+	
+

@@ -2,25 +2,8 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
-<!DOCTYPE html>
-<html class="no-js" lang="pt">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-	<title>${product.title}</title>
-	
-	<link href="http://cdn.shopify.com/s/files/1/0155/7645/t/177/assets/style.css?10732338795638998506" rel="stylesheet" type="text/css"  media="all"  />
-  	<link href="http://cdn.shopify.com/s/files/1/0155/7645/t/177/assets/layout-colors.css?10732338795638998506" rel="stylesheet" type="text/css"  media="all"  />
-	<link href="http://cdn.shopify.com/s/files/1/0155/7645/t/177/assets/responsivo-style.css?10732338795638998506" rel="stylesheet" type="text/css"  media="all"  />
-	<link href="//cdn.shopify.com/s/files/1/0155/7645/t/177/assets/guia-do-programador-style.css?10732338795638998506" rel="stylesheet" type="text/css"  media="all"  />
-	<link href="//cdn.shopify.com/s/files/1/0155/7645/t/177/assets/products.css?10732338795638998506" rel="stylesheet" type="text/css"  media="all"  />
-</head>
-
-<c:url value="/shopping" var="shoppingCartUrl" />
-<body class="product">
+<%@taglib tagdir="/WEB-INF/tags" prefix="cdc"%>
+<cdc:page title="Book Register">
 	<header id="layout-header">
 		<div class="clearfix container">
 			<a href="/" id="logo"></a>
@@ -48,25 +31,25 @@
 				<a href="http://www.casadocodigo.com.br">Home</a>
 			</li>
 			<li class="category">
-				<a href="/collections/livros-de-agile">Agile</a>
+				<a href="/collections/livros-de-agile"><fmt:message key="navigation.category.agile"/></a>
 			</li>
 			<li class="category">
-				<a href="/collections/livros-de-front-end">Front End</a>
+				<a href="/collections/livros-de-front-end"><fmt:message key="navigation.category.front"/></a>
 			</li>
 			<li class="category">
-				<a href="/collections/livros-de-games">Games</a>
+				<a href="/collections/livros-de-games"><fmt:message key="navigation.category.games"/></a>
 			</li>
 			<li class="category">
-				<a href="/collections/livros-de-java">Java</a>
+				<a href="/collections/livros-de-java"><fmt:message key="navigation.category.java"/></a>
 			</li>
 			<li class="category">
-				<a href="/collections/livros-de-mobile">Mobile</a>
+				<a href="/collections/livros-de-mobile"><fmt:message key="navigation.category.mobile"/></a>
 			</li>
 			<li class="category">
-				<a href="/collections/livros-desenvolvimento-web">Web</a>
+				<a href="/collections/livros-desenvolvimento-web"><fmt:message key="navigation.category.web"/></a>
 			</li>
 			<li class="category">
-				<a href="/collections/outros">Outros</a>
+				<a href="/collections/outros"><fmt:message key="navigation.category.others"/></a>
 			</li>
 		</ul>
 	</nav>
@@ -235,5 +218,4 @@
 			</div>
 		</div>
 	</footer>
-</body>
-</html>
+</cdc:page>
